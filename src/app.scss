@@ -1,0 +1,355 @@
+$font-family: "Karbon";
+$font-family-semibold: "Karbon Semibold";
+$font-weight-semibold: 700;
+$margin-body: 0 350px 0 345px;
+$aalto-purple: #644c79;
+$aalto-blue: #003479;
+$font-size-title: 36px;
+$font-size-subtitle: 20px;
+$font-size: 15px;
+$background-box: #f4f4f4;
+$content-container: 1225px;
+
+@font-face {
+  font-family: "Karbon";
+  src: url("/font/karbon-regular-webfont.woff") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Karbon Semibold";
+  src: url("/font/karbon-semibold-webfont.woff") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  font-family: $font-family;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.filter-title {
+  text-align: center;
+  font-size: $font-size-title;
+  font-weight: 700;
+}
+
+.todos-container {
+  display: flex;
+  gap: 60px;
+  max-width: $content-container;
+  width: 100%;
+  padding-top: 50px;
+  @media screen and (max-width: 920px) {
+    flex-direction: column;
+  }
+}
+
+.filter-content {
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 55px;
+  height: 100%;
+  @media screen and (max-width: 920px) {
+    gap: 20px;
+  }
+}
+
+.filter-box {
+  font-family: $font-family-semibold;
+  width: 100%;
+  max-width: 330px;
+  height: 523px;
+  background: $background-box;
+  display: flex;
+  color: $aalto-blue;
+  flex-direction: column;
+  padding-top: 22px;
+  > div:first-child {
+    margin-bottom: 29px;
+  }
+  @media screen and (max-width: 920px) {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.reset-filters {
+  cursor: pointer;
+  margin-bottom: 20px;
+  text-decoration: underline;
+  text-align: center;
+  font-weight: 400;
+  font-family: $font-family;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  background-color: $aalto-purple;
+  height: 94px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  max-width: $content-container;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  @media (max-width: $content-container) {
+    padding-left: 12px;
+  }
+}
+
+.footer {
+  flex-shrink: 0;
+  background-color: $aalto-blue;
+  color: #ffffff;
+  height: 94px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  div {
+    max-width: $content-container;
+    width: 100%;
+    font-size: $font-size;
+    @media (max-width: $content-container) {
+      padding-left: 12px;
+    }
+  }
+}
+
+.input-box {
+  height: 50px;
+  border: 1px solid $aalto-purple;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  div:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: $aalto-purple;
+  }
+}
+
+.input {
+  margin-left: 12px;
+  font-style: italic;
+}
+
+.switch-label {
+  margin-left: 0px !important;
+  > span:nth-child(2) {
+    width: 40px;
+  }
+}
+
+.switch {
+  margin: 15px 0px;
+}
+
+.search-box {
+  margin: 15px 0px;
+  width: 100%;
+  border: 1px solid $aalto-blue;
+  background-color: #fff;
+  border-radius: 0px;
+  .MuiSelect-icon {
+    border: 1px solid $aalto-blue;
+    border-radius: 50%;
+    top: calc(50% - 0.8em);
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+
+  > ul > li:first-child > button {
+    border: 1px solid $aalto-blue;
+    border-radius: 50%;
+    padding: 0px;
+    width: 15px !important;
+    min-width: 15px !important;
+    height: 15px !important;
+    min-height: 15px !important;
+  }
+  > ul > li:last-child > button {
+    border: 1px solid $aalto-blue;
+    border-radius: 50%;
+    padding: 0px;
+    width: 15px !important;
+    min-width: 15px !important;
+    height: 15px !important;
+    min-height: 15px !important;
+  }
+  & .Mui-selected {
+    background-color: $aalto-blue !important;
+    color: #fff;
+    &:hover {
+      background-color: #1565c0;
+    }
+  }
+}
+
+.todos-box {
+  display: flex;
+  flex-direction: column;
+  max-width: 830px;
+  width: 100%;
+  max-height: 630px;
+  height: 630px;
+  background-color: $background-box;
+
+  margin-bottom: 30px;
+  > div {
+    padding: 30px 35px;
+  }
+  @media screen and (max-width: 920px) {
+    max-width: 100%;
+  }
+}
+
+.todos-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  font-size: $font-size-subtitle;
+  font-family: $font-family-semibold;
+  text-transform: uppercase;
+  color: $aalto-blue;
+  padding-bottom: 8px;
+  border-bottom: 1px solid $aalto-blue;
+  margin-bottom: 35px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @media (max-width: 800px) {
+    font-size: 16px;
+  }
+  div:nth-child(3) {
+    margin-left: auto;
+  }
+}
+
+.todos-list {
+  height: 490px;
+  > ul {
+    margin: 0;
+    padding: 0;
+
+    > li {
+      background-color: #ffffff;
+      margin-bottom: 21px;
+      height: 71px;
+      display: flex;
+      align-items: center;
+      font-family: $font-family;
+      font-size: $font-size;
+      color: black;
+      > div:last-child {
+        margin-left: auto;
+        margin-right: 35px !important;
+      }
+    }
+    > li:last-child {
+      margin-bottom: 8px;
+    }
+    > li > div:nth-child(2) {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.todo-item {
+  display: flex;
+  gap: 60px;
+  font-size: $font-size-subtitle;
+  font-family: $font-family-semibold;
+  color: $aalto-blue;
+  padding-bottom: 8px;
+  border-bottom: 2px solid lightblue;
+  cursor: pointer;
+  div:nth-child(3) {
+    margin-left: auto;
+  }
+}
+
+.todo-id {
+  text-align: center;
+  width: 64px;
+}
+
+.left-container {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+  @media screen and (max-width: 920px) {
+    gap: 0px;
+  }
+}
+
+.button-box {
+  padding: 6px 10px !important;
+  border: 1px solid $aalto-purple !important;
+  background-color: $aalto-purple !important;
+  color: #fff !important;
+  margin-top: 15px !important;
+  width: 100%;
+}
+
+.modal-header {
+  font-family: $font-family-semibold;
+  font-size: $font-size-subtitle;
+  color: $aalto-blue;
+  margin-bottom: 15px;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid $aalto-blue;
+  @media screen and (max-width: 920px) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.modal-title {
+  font-family: $font-family-semibold;
+  font-size: $font-size-subtitle;
+  color: $aalto-blue;
+  margin-bottom: 15px;
+}
+
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 90%;
+}
+
+.f-width {
+  width: 100%;
+  margin-bottom: 15px;
+}
